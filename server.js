@@ -20,6 +20,7 @@ server.applyMiddleware({ app });
 
 db.sequelize.sync().then(() => {
   // populate author table with dummy data
+
   db.author.bulkCreate(
     times(10, () => ({
       firstName: faker.name.firstName(),
@@ -37,6 +38,6 @@ db.sequelize.sync().then(() => {
   );
 
   app.listen({ port: 3001 }, () =>
-    console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
+    console.log(`🚀 Server ready at http://localhost:3001${server.graphqlPath}`)
   );
 });
